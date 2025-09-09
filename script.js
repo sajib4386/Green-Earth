@@ -119,7 +119,7 @@ const displayCategories = (categories) => {
 
     for (const category of categories) {
         const li = document.createElement('li');
-        li.innerHTML = `<button id = "category-btn-${category.id}" onclick = "loadPlantsCategory(${category.id})" class="p-2 rounded-lg hover:bg-[#13d370] w-full text-center text-xl category-btn"> ${category.category_name} </button>
+        li.innerHTML = `<button id = "category-btn-${category.id}" onclick = "loadPlantsCategory(${category.id})" class="p-2 rounded-lg hover:bg-[#13d370] lg:w-full text-center text-xl category-btn"> ${category.category_name} </button>
         `;
         categoryList.appendChild(li);
     };

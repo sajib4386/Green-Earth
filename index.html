@@ -11,8 +11,8 @@
     <title>Green-Earth</title>
 </head>
 
-<body class="min-h-screen flex flex-col">
-    <main class="flex-grow">
+<body>
+    <main>
         <!-- Navbar Section -->
         <section
             class="bg-[#15803d] flex md:flex-row flex-col justify-between items-center text-white py-5 w-full lg:px-[135px] Font-inter">
@@ -46,7 +46,8 @@
         </section>
         <!-- All Cards Section -->
         <section
-            class="flex flex-col  lg:flex-row justify-center items-center lg:items-start gap-5 mx-auto mt-20 px-4 lg:ml-20">
+            class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-5 mx-auto mt-20 px-4 lg:ml-20">
+            <!-- CategoryList Section -->
             <aside class="w-full lg:w-[200px] lg:mx-0 text-center">
                 <h3 class="font-semibold text-4xl mb-5">Categories</h3>
                 <ul id="Category-list">
@@ -54,7 +55,7 @@
             </aside>
             <!-- Card Section -->
             <div id="Card-Container"
-                class="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-items-center items-center w-full lg:max-w-[1140px]">
+                class="grid lg:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center items-center w-full lg:max-w-[1140px]">
             </div>
             <!-- Cart Section -->
             <aside class="bg-white shadow-2xl w-[300px] h-[600px] rounded-2xl p-5 mx-auto lg:ml-10 overflow-y-auto"
@@ -139,7 +140,7 @@
                     Now</button>
             </form>
         </div>
-        <div class="bg-[#14532D] w-full text-white text-center mt-10 px-4 py-3 lg:p-3">© 2025 Green Earth. All
+        <div class="bg-[#14532D] w-full text-white text-center px-4 mt-10 py-3 lg:p-3">© 2025 Green Earth. All
             Rights Reserved.</div>
     </footer>
     <script src="script.js"></script>
