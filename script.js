@@ -1,13 +1,15 @@
 let cart = [];
 let total = 0;
 
+
+// Spinner Section
 const manageSpinner = (status) => {
     if (status == true) {
         document.getElementById("Spinner").classList.remove("hidden");
-        document.getElementById("all-card").classList.add("hidden");
+        document.getElementById("Card-Container").classList.add("hidden");
     }
     else {
-        document.getElementById("all-card").classList.remove("hidden");
+        document.getElementById("Card-Container").classList.remove("hidden");
         document.getElementById("Spinner").classList.add("hidden");
     }
 
@@ -31,7 +33,7 @@ const displayCards = (cards) => {
     for (const card of cards) {
         const cardDiv = document.createElement('div');
 
-        cardDiv.innerHTML = `<div class = "Font-inter bg-white shadow-2xl max-w-[400px] rounded-3xl p-2 mb-10">
+        cardDiv.innerHTML = `<div class = "Font-inter bg-white shadow-2xl max-w-[380px] lg:max-w-[400px] rounded-3xl p-2 mb-10">
                              <img src = "${card.image}" class = "w-[400px] h-[300px] rounded-3xl">
                              <h3 class = "tree-title text-2xl font-semibold ml-3 mt-5 hover:text-green-700">${card.name}</h3>
                              <p class = "text-[#606b78] ml-3 mt-3">${card.description}</p>

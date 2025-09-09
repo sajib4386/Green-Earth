@@ -11,10 +11,11 @@
     <title>Green-Earth</title>
 </head>
 
-<body>
-    <main>
+<body class="min-h-screen flex flex-col">
+    <main class="flex-grow">
         <!-- Navbar Section -->
-        <section class="bg-[#15803d] flex justify-between items-center text-white py-5 px-[135px] Font-inter">
+        <section
+            class="bg-[#15803d] flex md:flex-row flex-col justify-between items-center text-white py-5 w-full lg:px-[135px] Font-inter">
             <div class="flex items-center gap-2">
                 <img src="assets/logo.png" alt="" class="w-[50px] h-[50px]">
                 <span class="font-bold">Green Earth</span>
@@ -24,16 +25,18 @@
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Plant a Tree</a></li>
             </ul>
-            <button class="bg-[#FACC15] py-1.5 px-2.5 text-green-700 rounded-3xl">Plant a Tree</button>
+            <button class="bg-[#FACC15] py-1.5 px-2.5 text-green-700 rounded-3xl mt-4 lg:mt-0">Plant a Tree</button>
         </section>
         <!-- Banner Section -->
-        <section class="bg-[#cff0dc] flex justify-between items-center text-center Font-inter">
+        <section class="bg-[#cff0dc] flex flex-col lg:flex-row justify-between items-center text-center Font-inter">
             <div><img src="assets/hero-leaf1.png" alt=""></div>
             <div>
                 <h2 class="text-4xl font-semibold">Plant a Tree, Grow a Future</h2>
-                <p class="text-[#606b78] mt-3">Join our mission to plant 1 million trees and make the Earth greener for
+                <p class="text-[#606b78] mt-3 md:text-xl">Join our mission to plant 1 million trees and make the Earth
+                    greener for
                     future <br> generations.</p>
-                <button class="bg-[#FACC15]  text-green-700 py-1.5 px-3 rounded-3xl mt-7">Get Involved</button>
+                <button class="bg-[#FACC15]  text-green-700 py-1.5 px-3 rounded-3xl mb-2 mt-3 lg:mt-7">Get
+                    Involved</button>
             </div>
             <div><img src="assets/hero-leaf2.png" alt=""></div>
         </section>
@@ -42,18 +45,19 @@
             <span class="loading loading-bars loading-xl"></span>
         </section>
         <!-- All Cards Section -->
-          <section id="all-card" class="flex justify-center gap-5 mx-auto mt-20">
-            <!-- CategoryList Section -->
-            <aside class="w-[200px]">
+        <section
+            class="flex flex-col  lg:flex-row justify-center items-center lg:items-start gap-5 mx-auto mt-20 px-4 lg:ml-20">
+            <aside class="w-full lg:w-[200px] lg:mx-0 text-center">
                 <h3 class="font-semibold text-4xl mb-5">Categories</h3>
                 <ul id="Category-list">
                 </ul>
             </aside>
             <!-- Card Section -->
-            <div id="Card-Container" class="grid grid-cols-3 gap-4 justify-items-center items-center max-w-[1140px]">
+            <div id="Card-Container"
+                class="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-items-center items-center w-full lg:max-w-[1140px]">
             </div>
             <!-- Cart Section -->
-            <aside class="bg-white shadow-2xl w-[300px] h-[600px] overflow-y-auto rounded-2xl p-5 ml-10"
+            <aside class="bg-white shadow-2xl w-[300px] h-[600px] rounded-2xl p-5 mx-auto lg:ml-10 overflow-y-auto"
                 id="cart-section">
                 <h3 class="font-bold text-2xl">Your Cart</h3>
                 <ul id="cart-list" class="mb-4"></ul>
@@ -64,19 +68,18 @@
         <!-- About Campaign Section  -->
         <section class="Font-inter">
             <h2 class="text-center font-semibold text-2xl mt-[30px]">About the Campaign</h2>
-            <div class="flex items-center justify-center gap-6 mt-5">
-                <img src="assets/about.png" alt="" class="w-[570px] h-[570px]">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-6 mt-5">
+                <img src="assets/about.png" alt="" class="w-[380px] lg:w-[570px] h-[300px] lg:h-[570px]">
                 <div>
-                    <p class="text-[#606b78] text-2xl">Green Earth is a global tree plantation initiative dedicated to
-                        fighting
-                        <br> climate change.
-                        Since
-                        our start, we’ve planted over 500,000 trees <br> worldwide. By joining our campaign, you
-                        help
-                        restore
-                        forests, create <br> habitats for wildlife, and combat global warming.
+                    <p class="campaign-title text-[#606b78] text-lg lg:text-2xl text-justify ml-5 mr-5 lg:ml-0 lg:mr-0">
+                        Green Earth is a global
+                        tree plantation initiative dedicated to fighting<br class="hidden sm:inline">climate
+                        change.Since our start,
+                        we’ve planted over 500,000 trees<br class="hidden sm:inline">worldwide. By joining our campaign,
+                        you help restore
+                        forests, create<br class="hidden sm:inline"> habitats for wildlife,and combat global warming.
                     </p>
-                    <ul class="list-disc text-[#606b78] pl-5 mt-5 text-xl">
+                    <ul class="list-disc text-[#606b78] pl-5 mt-5 text-xl ml-7 lg:ml-0">
                         <li>Restoration of natural habitats</li>
                         <li>Improvement of air quality</li>
                         <li>Support for local communities</li>
@@ -85,9 +88,9 @@
             </div>
         </section>
         <!-- Our Impact Section -->
-        <section class="bg-[#CFF0DC] Font-inter py-20 mt-[50px]">
-            <h2 class="text-center font-bold text-2xl pb-8">Our Impact</h2>
-            <div class="grid grid-cols-3 gap-4 justify-items-center items-center text-center">
+        <section class="bg-[#CFF0DC] Font-inter py-5 lg:py-20 mt-[50px]">
+            <h2 class="text-center font-bold text-2xl pb-3 lg:pb-8">Our Impact</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-items-center items-center text-center">
                 <div class="bg-white py-[30px] px-[50px] w-full max-w-[300px] rounded-3xl">
                     <p class="text-[#15803D] font-bold text-3xl">500K+</p>
                     <p class="text-[#606b78]">Trees Planted</p>
@@ -102,39 +105,43 @@
                 </div>
             </div>
         </section>
-    </main>
-    <!-- Modal Section -->
-    <div id="tree-modal" class="hidden fixed inset-0 bg-black/40 flex justify-center items-center">
-        <div class="bg-white px-5 pb-20 pt-5 rounded-2xl max-w-[500px] relative">
-            <h2 id="modal-title" class="text-2xl font-semibold mb-4"></h2>
-            <img id="modal-image" alt="" class="w-[500px] h-[400px] rounded-3xl mb-4" />
-            <p class="font-bold"><strong>Category:</strong> <span id="modal-category"
-                    class="mb-3 text-[#606b78]"></span></p>
-            <p class="font-bold"><strong>Price:</strong> <span id="modal-price" class="mb-3 text-[#606b78]"></span></p>
-            <p class="font-bold"><strong>Description:</strong> <span id="modal-description"
-                    class="text-[#606b78] ml-3 mt-3 mb-3"></span></p>
-            <button onclick="closeModal()"
-                class="bg-[#c3edd2] px-3 py-2 rounded-3xl absolute right-5 text-red-700 text-xl mt-3 mb-3">Close</button>
+        <!-- Modal Section -->
+        <div id="tree-modal" class="hidden fixed inset-0 bg-black/40 flex justify-center items-center">
+            <div class="bg-white px-5 pb-20 pt-5 rounded-2xl max-w-[500px] relative">
+                <h2 id="modal-title" class="text-2xl font-semibold mb-4"></h2>
+                <img id="modal-image" alt="" class="w-[500px] h-[400px] rounded-3xl mb-4" />
+                <p class="font-bold"><strong>Category:</strong> <span id="modal-category"
+                        class="mb-3 text-[#606b78]"></span></p>
+                <p class="font-bold"><strong>Price:</strong> <span id="modal-price" class="mb-3 text-[#606b78]"></span>
+                </p>
+                <p class="font-bold"><strong>Description:</strong> <span id="modal-description"
+                        class="text-[#606b78] ml-3 mt-3 mb-3"></span></p>
+                <button onclick="closeModal()"
+                    class="bg-[#c3edd2] px-3 py-2 rounded-3xl absolute right-5 text-red-700 text-xl mt-3 mb-3">Close</button>
+            </div>
         </div>
-    </div>
+    </main>
     <!-- Footer Section -->
-    <section class="bg-[#166534] flex flex-col justify-center items-center Font-inter">
-        <div class="w-full flex flex-col justify-center items-center">
-            <h2 class="text-center text-white font-semibold text-3xl p-10">Plant a Tree Today</h2>
-            <form class="bg-[#15803D] flex flex-col p-10 rounded-3xl w-[500px]">
-                <input type="text" name="" id="" placeholder="Your Name" class="bg-white p-2 rounded-xl mb-4">
-                <input type="email" name="" id="" placeholder="Your Email Address" class="bg-white p-2 rounded-xl mb-4">
-                <select class="bg-white p-2 rounded-xl mb-4">
+    <footer class="bg-[#166534] flex flex-col justify-center items-center Font-inter w-full">
+        <div class="lg:w-full flex flex-col justify-center items-center px-4 lg:px-0 mx-auto">
+            <h2 class="text-center text-white font-semibold text-3xl p-4 lg:p-10">Plant a Tree Today</h2>
+            <form class="bg-[#15803D] flex flex-col p-3 lg:p-10 rounded-3xl w-full lg:max-w-[500px]">
+                <input type="text" name="" id="" placeholder="Your Name" class="bg-white p-2 rounded-xl mb-4 w-full">
+                <input type="email" name="" id="" placeholder="Your Email Address"
+                    class="bg-white p-2 rounded-xl mb-4 w-full">
+                <select class="bg-white p-2 rounded-xl mb-4 w-full">
                     <option>Number of Trees</option>
                     <option>1-Tree $5</option>
                     <option>5-Trees $25</option>
                     <option>10-Trees $50</option>
                 </select>
-                <button class="bg-[#FACC15]  text-green-700 py-1.5 px-3 rounded-3xl mt-4">Donate Now</button>
+                <button class="bg-[#FACC15]  text-green-700 py-1.5 px-3 rounded-3xl mt-0 lg:mt-4 w-full">Donate
+                    Now</button>
             </form>
         </div>
-        <div class="bg-[#14532D] w-full text-white text-center mt-10 p-3">© 2025 Green Earth. All Rights Reserved.</div>
-    </section>
+        <div class="bg-[#14532D] w-full text-white text-center mt-10 px-4 py-3 lg:p-3">© 2025 Green Earth. All
+            Rights Reserved.</div>
+    </footer>
     <script src="script.js"></script>
 </body>
 
