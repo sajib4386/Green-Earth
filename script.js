@@ -1,10 +1,26 @@
+let cart = [];
+let total = 0;
+
+const manageSpinner = (status) => {
+    if (status == true) {
+        document.getElementById("Spinner").classList.remove("hidden");
+        document.getElementById("all-card").classList.add("hidden");
+    }
+    else {
+        document.getElementById("all-card").classList.remove("hidden");
+        document.getElementById("Spinner").classList.add("hidden");
+    }
+
+};
 //  All Card Load 
 const cardLoad = () =>
-    fetch(`https://openapi.programming-hero.com/api/plants`)
-        .then((res) => res.json())
-        .then((json) => {
-            displayCards(json.plants);
-        });
+    manageSpinner(true);
+fetch(`https://openapi.programming-hero.com/api/plants`)
+    .then((res) => res.json())
+    .then((json) => {
+        displayCards(json.plants);
+        manageSpinner(false);
+    });
 
 
 const displayCards = (cards) => {
@@ -23,23 +39,74 @@ const displayCards = (cards) => {
                              <button class = "bg-[#c3edd2] px-3 py-2 rounded-3xl text-green-700">${card.category}</button>
                              <span class = "text-[#089934] font-bold"><i class="fa-solid fa-bangladeshi-taka-sign text-[#606b78]"></i> ${card.price}</span>
                              </div>
-                             <button class = "bg-[#8ffab5] px-3 py-2 rounded-3xl w-[350px] mx-auto block mt-3 mb-3">Add to Cart</button>
+                             <button class = "add-t-cart bg-[#8ffab5] px-3 py-2 rounded-3xl w-[350px] mx-auto block mt-3 mb-3">Add to Cart</button>
                              </div>
          `;
-
+        // Modal Handler
         cardDiv.querySelector('.tree-title').addEventListener('click', () => {
             showTreeDetails(card.id);
+        });
+
+        // Add to Cart Handler
+        cardDiv.querySelector('.add-t-cart').addEventListener('click', () => {
+            addToCart(card);
         });
 
         cardContainer.appendChild(cardDiv);
     }
 };
 
+// Add To cart Function
+const addToCart = (tree) => {
+    cart.push(tree);
+    total += parseFloat(tree.price);
+    cartHistory();
+
+};
+
+// Cart History 
+const cartHistory = () => {
+    const cartList = document.getElementById("cart-list");
+    cartList.innerHTML = "";
+
+    cart.forEach((tree, remove) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+        <div class = "flex justify-between items-center bg-[#d0f8de] p-3 rounded-2xl mb-3">
+        <div>
+        <p>${tree.name}</p>
+        <p><i class="fa-solid fa-bangladeshi-taka-sign text-[#606b78]"></i>${tree.price} <i class="fa-solid fa-xmark"></i> 1</p>
+        </div>
+        <button class = "remove-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        `;
+
+        li.querySelector(".remove-btn").addEventListener("click", () => {
+            removeCartHistory(remove);
+
+        });
+        cartList.appendChild(li);
+    });
+    document.getElementById("total-price").innerText = total.toFixed(2);
+}
+
+// Cart History Remove 
+const removeCartHistory = (remove) => {
+    total -= parseFloat(cart[remove].price);
+    cart.splice(remove, 1);
+    cartHistory();
+};
+
+
 // CategoryList Load
 const loadCategories = () => {
+    manageSpinner(true);
     fetch(`https://openapi.programming-hero.com/api/categories`)
         .then(res => res.json())
-        .then(json => displayCategories(json.categories))
+        .then(json => {
+            displayCategories(json.categories);
+            manageSpinner(false);
+        })
 };
 
 
@@ -50,22 +117,31 @@ const displayCategories = (categories) => {
 
     for (const category of categories) {
         const li = document.createElement('li');
-        li.innerHTML = ` <button onclick = "loadPlantsCategory(${category.id})"
-        class="p-2 rounded-lg hover:bg-[#13d370] w-full text-center text-xl">
-                ${category.category_name}
-            </button>
+        li.innerHTML = `<button id = "category-btn-${category.id}" onclick = "loadPlantsCategory(${category.id})" class="p-2 rounded-lg hover:bg-[#13d370] w-full text-center text-xl category-btn"> ${category.category_name} </button>
         `;
-
         categoryList.appendChild(li);
-
     };
+};
+
+const removeActive = () => {
+    const categoryBtn = document.querySelectorAll('.category-btn');
+    categoryBtn.forEach((btn) => btn.classList.remove('active'));
+
+
 };
 
 
 const loadPlantsCategory = (id) => {
+    manageSpinner(true);
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
         .then(res => res.json())
-        .then(json => displayCards(json.plants));
+        .then(json => {
+            removeActive();
+            const clickBtn = document.getElementById(`category-btn-${id}`);
+            clickBtn.classList.add("active");
+            displayCards(json.plants);
+            manageSpinner(false);
+        })
 };
 
 

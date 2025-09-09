@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles/index.css">
     <script src="https://kit.fontawesome.com/b4964b55eb.js" crossorigin="anonymous"></script>
@@ -36,18 +37,29 @@
             </div>
             <div><img src="assets/hero-leaf2.png" alt=""></div>
         </section>
+        <!-- Spinner Section -->
+        <section id="Spinner" class="flex justify-center items-center py-10">
+            <span class="loading loading-bars loading-xl"></span>
+        </section>
         <!-- All Cards Section -->
-        <section class="flex mt-20">
+          <section id="all-card" class="flex justify-center gap-5 mx-auto mt-20">
             <!-- CategoryList Section -->
-            <aside>
-                <h3 class="font-semibold text-4xl">Categories</h3>
+            <aside class="w-[200px]">
+                <h3 class="font-semibold text-4xl mb-5">Categories</h3>
                 <ul id="Category-list">
                 </ul>
             </aside>
             <!-- Card Section -->
-            <div id="Card-Container"
-                class="grid grid-cols-3 gap-4 justify-items-center items-center max-w-[1240px] mx-auto">
+            <div id="Card-Container" class="grid grid-cols-3 gap-4 justify-items-center items-center max-w-[1140px]">
             </div>
+            <!-- Cart Section -->
+            <aside class="bg-white shadow-2xl w-[300px] h-[600px] overflow-y-auto rounded-2xl p-5 ml-10"
+                id="cart-section">
+                <h3 class="font-bold text-2xl">Your Cart</h3>
+                <ul id="cart-list" class="mb-4"></ul>
+                <p class="font-bold text-2xl flex justify-between items-center">Total: <span id="total-price"><i
+                            class="fa-solid fa-bangladeshi-taka-sign text-[#606b78]"></i> 0</span></p>
+            </aside>
         </section>
         <!-- About Campaign Section  -->
         <section class="Font-inter">
